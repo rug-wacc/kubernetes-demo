@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-echo-deployment
+  namespace: default
+  labels:
+    app: node-echo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-echo
+  template:
+    metadata:
+      labels:
+        app: node-echo
+    spec:
+      containers:
+      - name: node-echo
+        image: node-echo:v1
+        ports:
+          - containerPort: 5000

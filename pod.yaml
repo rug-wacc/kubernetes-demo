@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-echo
+  namespace: wacc
+  labels:
+    app: wacc
+spec:
+  containers:
+  - name: node-echo
+    image: nielsmeima/node-echo:v1
+    ports:
+      - containerPort: 5000
